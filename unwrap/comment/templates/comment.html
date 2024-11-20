@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>评论系统</title>
+    <link rel="stylesheet" href="{{ url_for('comment.static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">评论系统</h1>
+
+        <h2 class="comments-title">所有评论</h2>
+        <ul class="comments-list">
+            {% for item in comments %}
+            <li class="comment-item">
+                <div class="comment-user"><strong>{{ item.username }}</strong></div>
+                <div class="comment-text">{{ item.comment }}</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
